@@ -1,7 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
 import { requireAuth, spotifyErrorResponse } from "@/lib/auth-guard";
 import { getPlaylistById, getPlaylistTracks } from "@/lib/spotify";
-import { analyzePlaylist } from "@/lib/claude";
+import { analyzePlaylist } from "@/lib/ai";
 import { checkRateLimit, getCachedAnalysis, setCachedAnalysis } from "@/lib/rate-limit";
 
 export async function POST(req: NextRequest) {

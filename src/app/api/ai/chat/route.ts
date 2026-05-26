@@ -1,7 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
 import { requireAuth, spotifyErrorResponse } from "@/lib/auth-guard";
 import { getPlaylistById, getPlaylistTracks } from "@/lib/spotify";
-import { chatAboutPlaylist } from "@/lib/claude";
+import { chatAboutPlaylist } from "@/lib/ai";
 import { checkRateLimit } from "@/lib/rate-limit";
 import type { ChatMessage } from "@/types";
 
