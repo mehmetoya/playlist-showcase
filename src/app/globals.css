@@ -1,0 +1,66 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Lora:ital,wght@0,400;1,400&family=DM+Mono:wght@300;400&display=swap');
+
+:root {
+  --font-bebas: 'Bebas Neue';
+  --font-playfair: 'Playfair Display';
+  --font-lora: 'Lora';
+  --font-dm-mono: 'DM Mono';
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: #080808;
+  color: #e8e8e8;
+  font-family: 'DM Mono', monospace;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar { width: 4px; height: 4px; }
+::-webkit-scrollbar-track { background: #080808; }
+::-webkit-scrollbar-thumb { background: #222; border-radius: 2px; }
+::-webkit-scrollbar-thumb:hover { background: #1db954; }
+
+/* Selection */
+::selection {
+  background: rgba(29, 185, 84, 0.3);
+  color: #fff;
+}
+
+/* Focus ring */
+:focus-visible {
+  outline: 2px solid #1db954;
+  outline-offset: 2px;
+}
+
+@layer utilities {
+  .font-display { font-family: 'Bebas Neue', cursive; }
+  .font-editorial { font-family: 'Playfair Display', Georgia, serif; }
+  .font-body { font-family: 'Lora', Georgia, serif; }
+  .font-code { font-family: 'DM Mono', monospace; }
+
+  .text-spotify { color: #1db954; }
+  .bg-spotify { background-color: #1db954; }
+  .border-spotify { border-color: #1db954; }
+
+  /* Grain overlay */
+  .grain::after {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.035'/%3E%3C/svg%3E");
+    pointer-events: none;
+    z-index: 9999;
+  }
+}
